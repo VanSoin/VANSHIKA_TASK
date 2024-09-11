@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillCraft Technology</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-animation"></div>
+
+    <nav class="navbar">
+        <div class="container">
+            <h1>SkillCraft Technology</h1>
+            <ul>
+                <li><a href="#" id="homeLink">Home</a></li>
+                <li><a href="#" id="internshipsLink">Internships</a></li>
+                <li><a href="#" id="aboutLink">About</a></li>
+                <li><a href="#" id="contactLink">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="content" class="content">
+        <!-- Home Section (default) -->
+        <section id="home" class="fade-in">
+            <div class="text-container">
+                <h2 class="slide-up">Home</h2>
+                <p class="fade-in-text">At SkillCraft Technology, we believe in the power of skills to shape futures. We are not just a company; we are craftsmen of talent, architects of opportunity, and builders of tomorrow.</p>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 SkillCraft Technology. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
