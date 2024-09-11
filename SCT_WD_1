@@ -39,3 +39,247 @@
 </body>
 </html>
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #6dd5ed 0%, #2193b0 100%);
+    color: white;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    padding: 1rem 0;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.navbar:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.navbar h1 {
+    display: inline-block;
+    font-size: 1.8rem;
+    color: #fff;
+    margin-left: 20px;
+}
+
+.navbar ul {
+    display: inline-block;
+    float: right;
+    margin-right: 20px;
+}
+
+.navbar ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar ul li a:hover {
+    color: #f7b42c;
+}
+
+.background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: url('background-shapes.svg');
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.content {
+    margin-top: 100px;
+    text-align: center;
+    padding: 3rem 1.5rem;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.text-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1.5rem 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer p {
+    color: #fff;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.slide-up {
+    transform: translateY(100px);
+    opacity: 0;
+    animation: slideUp 2s forwards;
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: url('background-shapes.svg');
+    opacity: 0.1;
+    z-index: -1;
+}
+
+@media (max-width: 768px) {
+    .navbar ul {
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .navbar ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .navbar h1 {
+        display: block;
+        text-align: center;
+    }
+
+    .content {
+        padding: 2rem 1rem;
+    }
+}
+
+// Add event listeners for navigation links
+document.getElementById("homeLink").addEventListener("click", showHome);
+document.getElementById("internshipsLink").addEventListener("click", showInternships);
+document.getElementById("aboutLink").addEventListener("click", showAbout);
+document.getElementById("contactLink").addEventListener("click", showContact);
+
+// Functions to display different sections
+
+function showHome() {
+    const content = document.getElementById('content');
+    content.innerHTML = `
+        <section id="home" class="fade-in">
+            <div class="text-container">
+                <h2 class="slide-up">Home</h2>
+                <p class="fade-in-text">At SkillCraft Technology, we believe in the power of skills to shape futures. We are not just a company; we are craftsmen of talent, architects of opportunity, and builders of tomorrow.</p>
+            </div>
+        </section>
+    `;
+}
+
+function showInternships() {
+    const content = document.getElementById('content');
+    content.innerHTML = `
+        <section id="internships" class="fade-in">
+            <div class="text-container">
+                <h2 class="slide-up">Internships</h2>
+                <div class="internship-cards">
+                    <div class="card slide-up">
+                        <h3>Software Development Internship</h3>
+                    </div>
+                    <div class="card slide-up">
+                        <h3>Web Development Internship</h3>
+                    </div>
+                    <div class="card slide-up">
+                        <h3>App Development Internship</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+    `;
+}
+
+function showAbout() {
+    const content = document.getElementById('content');
+    content.innerHTML = `
+        <section id="about" class="fade-in">
+            <div class="text-container">
+                <h2 class="slide-up">About</h2>
+                <p class="fade-in-text">We are focused on empowering students through skill development. Our aim is to equip students with practical knowledge and hands-on experience.</p>
+            </div>
+        </section>
+    `;
+}
+
+function showContact() {
+    const content = document.getElementById('content');
+    content.innerHTML = `
+        <section id="contact" class="fade-in">
+            <div class="text-container">
+                <h2 class="slide-up">Contact</h2>
+                <button id="showEmailBtn" class="slide-up">Show Email</button>
+                <p id="email" class="fade-in-text" style="display:none;">contact@skillcrafttech.com</p>
+            </div>
+        </section>
+    `;
+
+    document.getElementById('showEmailBtn').addEventListener('click', function () {
+        document.getElementById('email').style.display = 'block';
+    });
+}
+
+
+
